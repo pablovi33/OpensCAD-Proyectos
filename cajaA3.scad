@@ -254,7 +254,7 @@ circle(r=3);
 }
 */
 
-
+//Renderizado de la caja en base a la funcion caja SCTapa
 cajaSCTapa(largo=100,ancho=150,alto=250,espesor=3,dientes=8,modo=0);
 
 
