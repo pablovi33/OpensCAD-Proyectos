@@ -209,7 +209,7 @@ module cajaSCTapa (largo=40,ancho=30,alto=40,espesor=3,dientes=6,modo=1){
 
 //####RENDERIZADOS#####//
 
-
+/*
 difference(){
 
 
@@ -252,9 +252,10 @@ translate([ALTO1+(2.5*ESPESOR1),-((ANCHO1)+(2.5*ESPESOR1))])
 circle(r=3);
 
 }
+*/
 
 
-
+cajaSCTapa(largo=100,ancho=150,alto=250,espesor=3,dientes=8,modo=0);
 
 
 
