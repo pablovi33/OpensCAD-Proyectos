@@ -3,6 +3,9 @@ extensiOn=2;
 resoluciOn=100;
 angulo=60;
 
+use<elementosDiseNio.scad>
+use<piezasCorte.scad>
+
 
 
 
@@ -110,7 +113,7 @@ for(i=[1:3]){
 rotate(-90)   
 rotate(-120*i)
 rotate([90,0,0])
-cylinder(r=diametroTornillosM/2+tol,$fn=resoluciOn,h=10);
+cylinder(r=diametroTornillosM/2-tol,$fn=resoluciOn,h=10);
 
 }
 
@@ -121,13 +124,27 @@ cylinder(r=radioPieza,$fn=3,center=true,h=ladoTriangulo);
 //#######RENDERIZADOS#######
 ladoTriangulo=20;
 radioPieza=ladoTriangulo/(2*cos(30));
-translate([-sin(30)*radioPieza,10,0])
-piezaPerfil();
+
 
 trianguloCentral();
+ 
+ //PRUEBA de ensamble
+ /*
+ for(i=[0:2]){
+ rotate(i*120)
+     color("gray")
+ union(){
+ translate([-sin(30)*radioPieza,10,0])
+piezaPerfil();
+ 
+rotate([90,0,-90])
+ translate([0,0,sin(30)*radioPieza])
+ linear_extrude(height=260)
+ perfil1();
+ }
+ }//fin for
 
-
-
+*/
  
 
  
