@@ -9,6 +9,7 @@ GrosorPCB=1.25;
 GrosorContorno=3;
 Radio_Barreno=2;
 projection(){
+    //Cubierta Superior
     translate([R_1,R_1,GrosorPCB+GrosorContorno])
     difference(){
         //Genera Material
@@ -17,13 +18,13 @@ projection(){
         Barrenos();
         //Recorte Alimentación
         translate([-R_1,-R_1+Tol+4,0])
-        cube([Tol+12,11,GrosorContorno]);
+        cube([Tol+11.5,11,GrosorContorno]);
         //Recorte Ethernet
         translate([-R_1,+Tol-R_1+21,0])
         cube([Tol+20,18,GrosorContorno]);
         //Recorte USB
-        translate([Tol*2+PCB_Largo-R_1-19,9.5+Tol-R_1,0])
-        cube([19,15,GrosorContorno]);   
+        translate([Tol*2+PCB_Largo-R_1-18.25,9.5+Tol-R_1,0])
+        cube([18.25,15,GrosorContorno]);   
         //Recorte Reset
         translate([5+Tol-R_1,51.57-2+Tol-R_1,0])
         cube([6,4,GrosorContorno]);
@@ -31,7 +32,7 @@ projection(){
         translate([5+Tol-R_1,42-2+Tol-R_1,0])
         cube([6,4,GrosorContorno]);
         //Recorte SW2 
-        translate([Tol*2+PCB_Largo-R_1-17,40+Tol-R_1,0])
+        translate([Tol*2+PCB_Largo-R_1-18,41.25+Tol-R_1,0])
         cube([6,4,GrosorContorno]);
         //Recorte Primer Header
         translate([Tol-R_1+18,-R_1+Tol,0])
@@ -40,11 +41,11 @@ projection(){
         translate([Tol-R_1+18,48.61+Tol-R_1,0])
         cube([59,6,GrosorContorno]);
         //Recorte  Debug
-        translate([Tol-R_1+19.685-Tol_Pin+21,-R_1+Tol+6,0])
-        cube([19,5,GrosorContorno]);
+        translate([Tol-R_1+19.685-Tol_Pin+21.5,-R_1+Tol+6,0])
+        cube([17.5,4,GrosorContorno]);
         //Recorte Capacitor
-        translate([Tol*2+PCB_Largo-R_1-29,Tol+8-R_1,0])
-        cube([11,8,GrosorContorno]);
+        translate([Tol*2+PCB_Largo-R_1-30,Tol+7.5-R_1,0])
+        cube([10.5,8,GrosorContorno]);
     }
 }
 translate([Tol*8+PCB_Largo-D_1,0,0])
@@ -58,9 +59,9 @@ projection(){
         Barrenos();
         //Recorte Zona 1
         translate([-R_1,-R_1+Tol+4,0])
-        cube([Tol+12,45,GrosorContorno]);
+        cube([Tol+11.5,46,GrosorContorno]);
         //Recorte Zona 2
-        translate([Tol+12-R_1,-R_1+2+Tol+5,0])
+        translate([Tol+11.5-R_1,-R_1+2+Tol+5,0])
         cube([20,40,GrosorContorno]);
         //Recorte Zona 3
         translate([Tol-R_1+18,-R_1+Tol,0])
@@ -68,6 +69,9 @@ projection(){
         //Recorte Zona 4
         translate([Tol-R_1+77,9.5+Tol-R_1,0])
         cube([Tol+9.36,36,GrosorContorno]);
+        //Recorte Reset
+        translate([5+Tol-R_1,51.57-2+Tol-R_1,0])
+        cube([6,4,GrosorContorno]);
     }
 }
 translate([Tol*14+2*PCB_Largo-D_1,0,0])
@@ -75,15 +79,15 @@ projection(){
     //Soporte Inferior
     translate([R_1,R_1,-GrosorContorno])
     difference(){
-         //Genera Material
+        //Genera Material
         CuadradoFigura();
         //Recorte Barrenos
         Barrenos();
         //Recorte Zona 1
         translate([-R_1,-R_1+Tol+4,0])
-        cube([Tol+12,45,GrosorContorno]);
+        cube([Tol+11.5,46,GrosorContorno]);
         //Recorte Zona 2
-        translate([Tol+12-R_1,-R_1+2+Tol+5,0])
+        translate([Tol+11.5-R_1,-R_1+2+Tol+5,0])
         cube([20,40,GrosorContorno]);
         //Recorte Zona 3
         translate([Tol-R_1+18,-R_1+Tol,0])
@@ -103,11 +107,11 @@ projection(){
         //Recorte Barrenos
         Barrenos();
         //Recorte MicroUSB
-        translate([-R_1,-R_1+Tol+39,0])
-        cube([13,10,GrosorContorno]);      
+        translate([-R_1,-R_1+Tol+38,0])
+        cube([13,12,GrosorContorno]);      
         //Recorte HDMI
-        translate([Tol*2+PCB_Largo-R_1-12,-R_1+Tol+21,0])
-        cube([12,8,GrosorContorno]);
+        translate([Tol*2+PCB_Largo-R_1-12,-R_1+Tol+19,0])
+        cube([12,11,GrosorContorno]);
         //Recorte MicroSDCard
         translate([Tol*2+PCB_Largo-R_1-4,-R_1+Tol+29,0])
         cube([4,16.5,GrosorContorno]);
